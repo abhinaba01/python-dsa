@@ -10,7 +10,7 @@ def countDigits(n):
         
 
 if __name__ == "__main__":
-    N = 329823
+    N = int(input("Enter a number: "))
     print("N:", N)
     digits = countDigits(N)
     print("Number of Digits in N:", digits)
