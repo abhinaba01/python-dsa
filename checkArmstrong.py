@@ -2,8 +2,7 @@ import math
 
 
 def checkArmstrong(num):
-    #num_digits = count_num_digits(num)
-    num_digits = len(str(num))
+    num_digits = count_num_digits(num)
     
     sum ,d = 0,0
     while num > 0:
