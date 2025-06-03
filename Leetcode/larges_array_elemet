@@ -1,0 +1,32 @@
+from typing import List
+
+
+def check_sorted(arr:List[int]):
+    if arr[-1] > arr[0]:    
+        for i in range(len(arr)-1):
+            if arr[i] > arr[i+1]:
+                print("The array is not sorted in ascending order")
+                return False
+        print("The array is sorted in ascending order")
+    else:
+        for i in range(len(arr)-1):
+            if arr[i] < arr[i+1]:
+                print("The array is not sorted in descending order")
+                return False
+        print("The array is sorted in descending order")
+
+    
+
+    
+
+
+    
+
+if __name__ == "__main__":
+     check_sorted([9,8,7,16,5,4,3,2,1])
+     check_sorted([1,2,3,4,5,6,7,8,19])
+     check_sorted([1,2,3,4,5,6,7,8,29])
+     check_sorted([1,2,3,4,5,6,7,8,91])
+
+
+    
