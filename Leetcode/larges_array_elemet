@@ -8,12 +8,7 @@ def check_sorted(arr:List[int]):
                 print("The array is not sorted in ascending order")
                 return False
         print("The array is sorted in ascending order")
-    else:
-        for i in range(len(arr)-1):
-            if arr[i] < arr[i+1]:
-                print("The array is not sorted in descending order")
-                return False
-        print("The array is sorted in descending order")
+    
 
     
 
