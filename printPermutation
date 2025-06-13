@@ -1,0 +1,42 @@
+
+from typing import List
+
+def printPermutation(nums:List[int],index):
+    hashMap = {}
+    
+    for i in range(index,len(nums)):
+        nums_copy = swap(nums,index,i)
+        if hashMap[nums_copy]:
+            hashMap[nums_copy]=+1
+        else:
+            hashMap[nums_copy] = 1
+        print(nums_copy)
+        if index < len(nums) - 1:
+            printPermutation(nums_copy,index+1)
+
+    print(hashMap)        
+        
+       
+    
+
+    
+    
+
+def swap(arr,i ,j):
+    new_arr = arr.copy()
+    temp = 0
+    temp = new_arr[i]
+    new_arr[i] = new_arr[j]
+    new_arr[j] = temp
+
+    return new_arr
+
+
+if __name__ == "__main__":
+    nums = [1,2,3]
+    printPermutation(nums,0)
+
+    
+
+    
+    
