@@ -15,21 +15,55 @@ class Solution:
         
         for i in range(0, n1):
             L[i] = arr[l + i]
+
+         
     
         for j in range(0, n2):
             R[j] = arr[m + 1 + j]
+
+
+
+
+
+        i1 = 0     
+        j1 = 0     
+        
+
+        
+             
+    
+        while i1 < n1 and j1 < n2:
+            if L[i1] <= 2* R[j1]:
+                
+                i1 += 1
+            else:
+                self.cnt = self.cnt + n1 - i1
+                
+                
+                j1 += 1
+            
+        
+
+
+
+
     
         
         i = 0     
         j = 0     
-        k = l     
+        k = l
+
+
+
     
         while i < n1 and j < n2:
             if L[i] <= R[j]:
                 arr[k] = L[i]
                 i += 1
             else:
-                self.cnt = self.cnt + n1 - i
+                
+
+                
                 arr[k] = R[j]
                 
                 j += 1
@@ -47,6 +81,7 @@ class Solution:
             j += 1
             k += 1
 
+        
 
 
 
@@ -71,6 +106,6 @@ class Solution:
         return self.cnt
     
 if __name__ == '__main__':
-    arr = [5,4,2,6,10,9,3,7]
+    arr = [2,4,3,5,1]
     sol = Solution()
     print(sol.inversionCount(arr))  
