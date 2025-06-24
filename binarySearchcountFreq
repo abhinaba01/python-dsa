@@ -1,0 +1,28 @@
+class Solution:
+    
+    def __init__(self):
+        self.cnt = 0
+    
+    def countFreq(self, arr, target):
+        
+        l = 0
+        r = len(arr) - 1
+        
+        if l <= r:
+            
+            m = (l + r) // 2
+            if arr[m] < target:
+                self.cnt += self.countFreq(arr[m+1:r+1],target)
+            elif arr[m] > target:
+                self.cnt += self.countFreq(arr[l:m],target)
+            else:
+                self.cnt += 1
+                self.cnt+=self.countFreq(arr[m+1:r+1],target)
+                self.cnt+=self.countFreq(arr[l:m],target)
+                
+            return self.cnt    
+                
+        else:
+            return 0
+                
+         

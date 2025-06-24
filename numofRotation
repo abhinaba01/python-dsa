@@ -1,0 +1,84 @@
+from typing import List
+
+
+class Solution:
+    def findMin(self, nums: List[int]) -> int:
+        l = 0
+        r = len(nums) - 1
+
+        ans = float("inf")
+
+        while l <= r:
+            m = (l + r) // 2
+
+            if nums[l] <= nums[m]:
+                ans = min(ans,nums[l])
+                l = m + 1
+
+            elif nums[m] <= nums[r]:
+                ans = min(ans,nums[m])
+                r = m - 1
+            
+
+        return ans 
+    
+    
+    
+    def search(self, nums: List[int], target: int) -> int:
+
+        l = 0
+        r = len(nums) - 1
+
+       
+
+        while l <= r:
+            m = (l + r) // 2
+            if nums[m] == target:
+                return m
+
+            # if left sub array is sorted
+            if nums[l] <= nums[m]:  
+                if nums[m] >= target and nums[l] <= target:
+                    r = m - 1
+                else:
+                    l = m + 1
+
+             # if right sub array is sorted
+            elif nums[r] >= nums[m]: 
+                if nums[m] <= target and nums[r] >= target:
+
+                    l = m + 1
+                else:
+                    r = m - 1
+
+
+        return -1
+    
+    def numRotation(self):
+
+        myList = [11,22,33,44,55,66,77,88,99]
+
+        target = self.findMin(myList)
+        index = self.search(myList,target)
+
+        n = len(myList)
+        index = (index + n - 1) % n + 1
+
+        print(index)
+
+
+if __name__ == "__main__":
+        sol = Solution()
+        sol.numRotation()
+
+
+
+            
+
+
+
+        
+
+         
+        
+        

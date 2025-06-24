@@ -1,0 +1,22 @@
+class Solution:
+    #User function Template for python3
+    
+    #Complete this function
+    def findFloor(self, arr, x):
+        l = 0
+        r = len(arr) - 1
+        
+        ans = -1
+        
+        while l <= r:
+            m = (l + r) // 2
+            if arr[m] <= x:
+                ans = m
+                l = m+1
+            elif arr[m] > x:
+                r = m - 1
+           
+        return ans
+                
+        
+        
