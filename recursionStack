@@ -1,0 +1,15 @@
+from typing import List
+
+class Solution:
+    def reverse(self,St): 
+        if not St:
+            return 
+        x = St.pop()
+        
+        print(x,end= " ")
+        self.reverse(St)
+
+stack = [1, 2, 3, 4, 5]
+sol = Solution()
+reversed_stack = sol.reverse(stack)
+print(reversed_stack)

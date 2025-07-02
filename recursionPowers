@@ -1,0 +1,21 @@
+
+def myPow(x: float, n: int) -> float:
+
+    if n == 0:
+        return 1
+    
+    else:
+        res = myPow(x,n//2)
+        if n & 1 == 0:
+            return res * res
+        else:
+            return res * x * res
+       
+       
+            
+if __name__ == "__main__":
+    x = int(input("Enter a  number: "))
+    n = int(input("Enter the power "))
+
+    result = myPow(x,n)
+    print(result)
